@@ -1,44 +1,53 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>no.thremains.pro</groupId>
-	<artifactId>one</artifactId>
-	<packaging>war</packaging>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>one Maven Webapp</name>
-	<url>http://maven.apache.org</url>
-	<dependencies>
-
-		<!-- junit 支持 -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.9</version>
-			<scope>test</scope>
-		</dependency>
-
-		<!-- mysql驱动依赖包 -->
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>no.thremains.pro</groupId>
+  <artifactId>one</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>one Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+  
+  		<!-- junit 支持 -->
+	    <dependency>
+	      <groupId>junit</groupId>
+	      <artifactId>junit</artifactId>
+	      <version>4.9</version>
+	      <scope>test</scope>
+	    </dependency>
+	    
+    	<!-- mysql驱动依赖包 -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.27</version>
 		</dependency>
-
+		
 		<!-- sqlserver驱动依赖包 -->
-		<!-- <dependency> <groupId>net.sourceforge.jtds</groupId> <artifactId>jtds</artifactId> 
-			<version>1.3.1</version> </dependency> -->
-
+		<!--
+		<dependency>
+			<groupId>net.sourceforge.jtds</groupId>
+			<artifactId>jtds</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+		-->
+		
 		<!-- oracle数据库驱动，如果没有使用oracle数据库，请把这个引用注释掉 -->
 		<!-- oracle驱动特殊，他是商业驱动，官方maven版本库中是不存在jar包的，所以需要使用下面命令添加到你本地的maven库中 -->
 		<!-- 在CMD中执行下面语句(前提是你配置好了JAVA和MAVEN环境变量) -->
-		<!-- mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc6 
-			-Dversion=11.2.0 -Dpackaging=jar -Dfile=D:\pf\oracle\product\11.2.0\dbhome_1\jdbc\lib\ojdbc6.jar -->
+		<!-- mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0 -Dpackaging=jar -Dfile=D:\pf\oracle\product\11.2.0\dbhome_1\jdbc\lib\ojdbc6.jar -->
 		<!-- DartifactId的值改为artifactId的值 -->
 		<!-- Dversion的值改为version的值 -->
 		<!-- Dfile的值指定到你硬盘上的oracle驱动的绝对位置 -->
-		<!-- <dependency> <groupId>com.oracle</groupId> <artifactId>ojdbc6</artifactId> 
-			<version>11.2.0</version> </dependency> -->
-
+		<!-- 
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0</version>
+		</dependency>
+		-->
+		
 		<!-- 加入junit依赖包 -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -46,7 +55,7 @@
 			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
-
+		
 		<!-- spring 支持 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -59,211 +68,163 @@
 			<version>4.2.0.RELEASE</version>
 			<scope>runtime</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context-support</artifactId>
-			<version>4.2.0.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-beans</artifactId>
-			<version>4.2.0.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-tx</artifactId>
-			<version>4.2.0.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>aopalliance</groupId>
-			<artifactId>aopalliance</artifactId>
-			<version>1.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>1.7.1</version>
-		</dependency>
-		<!-- spring aspects -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-aop</artifactId>
-			<version>4.2.0.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-aspects</artifactId>
-			<version>4.2.0.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-orm</artifactId>
-			<version>4.2.0.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-oxm</artifactId>
-			<version>4.2.0.RELEASE</version>
-		</dependency>
-
-		<!-- spring jdbc -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jdbc</artifactId>
-			<version>4.2.0.RELEASE</version>
-		</dependency>
-		<!-- spring web -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>4.2.0.RELEASE</version>
-		</dependency>
-
-
-
-		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts2-core</artifactId>
-			<version>2.3.7</version>
-		</dependency>
-
-		<!-- struts spring plugin -->
-		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts2-spring-plugin</artifactId>
-			<version>2.3.7</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.struts.xwork</groupId>
-			<artifactId>xwork-core</artifactId>
-			<version>2.3.7</version>
-		</dependency>
-		<dependency>
-			<groupId>ognl</groupId>
-			<artifactId>ognl</artifactId>
-			<version>3.0.5</version>
-		</dependency>
-		<!-- commons dependency -->
-		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			<version>1.1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging-api</artifactId>
-			<version>1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-fileupload</groupId>
-			<artifactId>commons-fileupload</artifactId>
-			<version>1.2.2</version>
-		</dependency>
-
-		<!-- struts other -->
-		<dependency>
-			<groupId>javassist</groupId>
-			<artifactId>javassist</artifactId>
-			<version>3.11.0.GA</version>
-		</dependency>
-		<dependency>
-			<groupId>org.freemarker</groupId>
-			<artifactId>freemarker</artifactId>
-			<version>2.3.19</version>
-		</dependency>
-
-		<!-- struts convention plugin -->
-		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts2-convention-plugin</artifactId>
-			<version>2.3.7</version>
-		</dependency>
-
-		<!-- struts cglib dependency -->
-		<dependency>
-			<groupId>asm</groupId>
-			<artifactId>asm</artifactId>
-			<version>3.3</version>
-		</dependency>
-		<dependency>
-			<groupId>asm</groupId>
-			<artifactId>asm-commons</artifactId>
-			<version>3.3</version>
-		</dependency>
-		<dependency>
-			<groupId>asm</groupId>
-			<artifactId>asm-tree</artifactId>
-			<version>3.3</version>
-		</dependency>
-
-		<!-- LOG4J -->
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.9</version>
-		</dependency>
-
-
-		<!-- hibernate dependency -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>3.6.10.Final</version>
-		</dependency>
-		<dependency>
-			<groupId>antlr</groupId>
-			<artifactId>antlr</artifactId>
-			<version>2.7.6</version>
-		</dependency>
-		<dependency>
-			<groupId>dom4j</groupId>
-			<artifactId>dom4j</artifactId>
-			<version>1.6.1</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-collections</groupId>
-			<artifactId>commons-collections</artifactId>
-			<version>3.1</version>
-		</dependency>
-
-		<!-- Hibernate uses slf4j for logging, for our purposes here use the simple 
-			backend -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-nop</artifactId>
-			<version>1.6.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>1.6.1</version>
-		</dependency>
-
-		<!-- sql connection pool -->  
+		    <dependency>  
+        <groupId>org.springframework</groupId>  
+        <artifactId>spring-context-support</artifactId>  
+        <version>4.2.0.RELEASE</version>  
+	    </dependency>  
+	    <dependency>  
+	        <groupId>org.springframework</groupId>  
+	        <artifactId>spring-beans</artifactId>  
+	        <version>4.2.0.RELEASE</version>  
+	    </dependency>  
+	    <dependency>  
+	        <groupId>org.springframework</groupId>  
+	        <artifactId>spring-tx</artifactId>  
+	        <version>4.2.0.RELEASE</version>  
+	    </dependency>  
+	    <dependency>  
+	        <groupId>aopalliance</groupId>  
+	        <artifactId>aopalliance</artifactId>  
+	        <version>1.0</version>  
+	    </dependency>  
+	    <dependency>  
+	        <groupId>org.aspectj</groupId>  
+	        <artifactId>aspectjweaver</artifactId>  
+	        <version>1.7.1</version>  
+	    </dependency>  
+	    <!-- spring aspects -->  
+	    <dependency>  
+	        <groupId>org.springframework</groupId>  
+	        <artifactId>spring-aop</artifactId>  
+	        <version>4.2.0.RELEASE</version>  
+	    </dependency>  
+	    <dependency>  
+	        <groupId>org.springframework</groupId>  
+	        <artifactId>spring-aspects</artifactId>  
+	        <version>4.2.0.RELEASE</version>  
+	    </dependency>  
+	    <dependency>  
+	        <groupId>org.springframework</groupId>  
+	        <artifactId>spring-orm</artifactId>  
+	        <version>4.2.0.RELEASE</version>  
+	    </dependency>  
+	    <dependency>  
+	        <groupId>org.springframework</groupId>  
+	        <artifactId>spring-oxm</artifactId>  
+	        <version>4.2.0.RELEASE</version>  
+	    </dependency>  
+	      
+	    <!-- spring jdbc -->  
+	    <dependency>  
+	        <groupId>org.springframework</groupId>  
+	        <artifactId>spring-jdbc</artifactId>  
+	        <version>4.2.0.RELEASE</version>  
+	    </dependency>  
+	    <!-- spring web -->  
+	    <dependency>  
+	        <groupId>org.springframework</groupId>  
+	        <artifactId>spring-webmvc</artifactId>  
+	        <version>4.2.0.RELEASE</version>  
+	    </dependency>  
+	    
+	    
+	    
 		<dependency>  
-		    <groupId>commons-dbcp</groupId>  
-		    <artifactId>commons-dbcp</artifactId>  
-		    <version>1.4</version>  
+		    <groupId>org.apache.struts</groupId>  
+		    <artifactId>struts2-core</artifactId>  
+		    <version>2.3.7</version>  
+		</dependency>  
+		  
+		<!-- struts spring plugin -->  
+		<dependency>  
+		    <groupId>org.apache.struts</groupId>  
+		    <artifactId>struts2-spring-plugin</artifactId>  
+		    <version>2.3.7</version>  
 		</dependency>  
 		<dependency>  
-		    <groupId>commons-pool</groupId>  
-		    <artifactId>commons-pool</artifactId>  
-		    <version>1.6</version>  
+		    <groupId>org.apache.struts.xwork</groupId>  
+		    <artifactId>xwork-core</artifactId>  
+		    <version>2.3.7</version>  
 		</dependency>  
 		<dependency>  
-		    <groupId>org.apache.commons</groupId>  
-		    <artifactId>commons-lang3</artifactId>  
-		    <version>3.1</version>  
-		</dependency> 
-
-
-
-
+		    <groupId>ognl</groupId>  
+		    <artifactId>ognl</artifactId>  
+		    <version>3.0.5</version>  
+		</dependency>  
+		<!-- commons dependency -->  
+		<dependency>  
+		    <groupId>commons-logging</groupId>  
+		    <artifactId>commons-logging</artifactId>  
+		    <version>1.1.1</version>  
+		</dependency>  
+		<dependency>  
+		    <groupId>commons-logging</groupId>  
+		    <artifactId>commons-logging-api</artifactId>  
+		    <version>1.1</version>  
+		</dependency>  
+		<dependency>  
+		    <groupId>commons-io</groupId>  
+		    <artifactId>commons-io</artifactId>  
+		    <version>2.0.1</version>  
+		</dependency>  
+		<dependency>  
+		    <groupId>commons-fileupload</groupId>  
+		    <artifactId>commons-fileupload</artifactId>  
+		    <version>1.2.2</version>  
+		</dependency>  
+		  
+		<!-- struts other -->  
+		<dependency>  
+		    <groupId>javassist</groupId>  
+		    <artifactId>javassist</artifactId>  
+		    <version>3.11.0.GA</version>  
+		</dependency>  
+		<dependency>  
+		    <groupId>org.freemarker</groupId>  
+		    <artifactId>freemarker</artifactId>  
+		    <version>2.3.19</version>  
+		</dependency>  
+		  
+		<!-- struts convention plugin -->  
+		<dependency>  
+		    <groupId>org.apache.struts</groupId>  
+		    <artifactId>struts2-convention-plugin</artifactId>  
+		    <version>2.3.7</version>  
+		</dependency>  
+		  
+		<!-- struts cglib dependency -->  
+		<dependency>  
+		    <groupId>asm</groupId>  
+		    <artifactId>asm</artifactId>  
+		    <version>3.3</version>  
+		</dependency>  
+		<dependency>  
+		    <groupId>asm</groupId>  
+		    <artifactId>asm-commons</artifactId>  
+		    <version>3.3</version>  
+		</dependency>  
+		<dependency>  
+		    <groupId>asm</groupId>  
+		    <artifactId>asm-tree</artifactId>  
+		    <version>3.3</version>  
+		</dependency>  
+	    
+	    <!-- LOG4J -->
+	    <dependency>
+		  <groupId>log4j</groupId>
+		  <artifactId>log4j</artifactId>
+		  <version>1.2.9</version>
+		</dependency>
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+		
 		<!-- j2ee依赖包 -->
 		<dependency>
 			<groupId>org.apache.openejb</groupId>
@@ -271,32 +232,32 @@
 			<version>6.0-1</version>
 			<scope>provided</scope>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 			<scope>provided</scope>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>jsp-api</artifactId>
 			<version>2.1</version>
 			<scope>provided</scope>
 		</dependency>
-
-	</dependencies>
-	<build>
-		<finalName>one</finalName>
-		<plugins>
+    
+  </dependencies>
+  <build>
+    <finalName>one</finalName>
+    <plugins>
 			<!-- 解决了一个不知道为什么的错误 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>2.6</version>
 			</plugin>
-
+		
 			<!-- 编译的时候使用JDK7和UTF8编码 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -308,7 +269,7 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
-
+			
 			<!-- 编译jar包 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -324,20 +285,20 @@
 					</archive>
 				</configuration>
 			</plugin>
-
+			
 			<!-- 实现tomcat7热部署，在tomcat-users.xml中创建账号 -->
 			<plugin>
-				<groupId>org.apache.tomcat.maven</groupId>
-				<artifactId>tomcat7-maven-plugin</artifactId>
-				<version>2.2</version>
-				<configuration>
-					<url>http://localhost:8080/manager/html</url>
-					<server>tomcat</server>
-					<username>tomcat</username>
-					<password>tomcat</password>
-					<path>/one</path>
-				</configuration>
-			</plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <url>http://localhost:8080/manager/html</url>
+                    <server>tomcat</server>
+                    <username>tomcat</username>
+                    <password>tomcat</password>
+                    <path>/one</path>
+                </configuration>
+            </plugin>
 		</plugins>
-	</build>
+  </build>
 </project>

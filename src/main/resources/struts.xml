@@ -37,8 +37,7 @@
 
 	<package name="nonePackage" extends="struts-default" namespace="/">
 		<interceptors>
-
-			<interceptor name="sessionInterceptor" class="com.none.first.interceptor.SessionInterceptor" />
+			<interceptor name="sessionInterceptor" class="no.thremains.pro.one.interceptor.SessionInterceptor" />
 			<interceptor-stack name="sessionStack">
 				<interceptor-ref name="encodingStack"></interceptor-ref>
 				<interceptor-ref name="sessionInterceptor">
@@ -47,7 +46,7 @@
 				</interceptor-ref>
 			</interceptor-stack>
 			<!-- 权限拦截器 -->
-			<interceptor name="securityInterceptor" class="com.none.first.interceptor.SecurityInterceptor" />
+			<interceptor name="securityInterceptor" class="no.thremains.pro.one.interceptor.SecurityInterceptor" />
 			<interceptor-stack name="securityStack">
 				<interceptor-ref name="sessionStack"></interceptor-ref>
 				<interceptor-ref name="securityInterceptor">

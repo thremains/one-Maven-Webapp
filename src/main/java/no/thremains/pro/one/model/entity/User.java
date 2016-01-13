@@ -17,13 +17,13 @@ import org.hibernate.annotations.DynamicUpdate;
 @DynamicUpdate(true)
 public class User implements Serializable {
 
-	private Integer id;
+	private int id;
 	
 	private String userName;
 	
 	private String pssword;
 	
-	private Integer group;
+	private int groupId;
 	
 	private String relName;
 	
@@ -31,11 +31,11 @@ public class User implements Serializable {
 
 	@Id
 	@Column(name="id", nullable=false, unique=true)
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -57,13 +57,13 @@ public class User implements Serializable {
 		this.pssword = pssword;
 	}
 
-	@Column(name="group", nullable=true)
-	public Integer getGroup() {
-		return group;
+	@Column(name="groupid", nullable=true)
+	public int getGroup() {
+		return groupId;
 	}
 
-	public void setGroup(Integer group) {
-		this.group = group;
+	public void setGroup(int groupId) {
+		this.groupId = groupId;
 	}
 
 	@Column(name="relname", nullable=true)
@@ -87,7 +87,7 @@ public class User implements Serializable {
 	@Override
 	public String toString() {
 		return "id=" + id + "\nuserName=" + userName + "\npssword=" + pssword
-				+ "\ngroup=" + group + "\nrelName=" + relName + "\nphone="
+				+ "\ngroup=" + groupId + "\nrelName=" + relName + "\nphone="
 				+ phone + "\n";
 	}
 }
